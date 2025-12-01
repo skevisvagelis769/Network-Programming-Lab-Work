@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>ΜΗΝΙΑΙΑ ΧΡΕΩΣΗ ΛΟΓΑΡΙΑΣΜΟΥ </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="mobile.jsp" method="POST">
+            <table>
+                <tr>
+                    <td><label for="opt">Programm</label></td>
+                    <td><select name="opt" id="opt">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                    </select> </td>
+                </tr> 
+                <tr>
+                    <td><label for="min" >Minutes</label></td>
+                    <td><input name="min" type="text"></td>
+                    
+                </tr>
+                <tr>
+                    <td><label for="sms" >SMS</label></td>
+                    <td><input name="sms" type="text"></td>
+                    
+                </tr>
+                <tr>
+                    <td><label for="mb" >MB</label></td>
+                    <td><input name="mb" type="text"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button type="submit" name="submit">Calculate</button>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </body>
+</html>
