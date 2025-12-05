@@ -1,0 +1,30 @@
+// StoreData class that extends Thread
+class StoreData extends Thread {
+    private String sCode;
+    private int sNum;
+    
+    // Constructor
+    public StoreData(String sCode, int sNum) {
+        this.sCode = sCode;
+        this.sNum = sNum;
+    }
+    
+    // run method - executes when thread starts
+    @Override
+    public void run() {
+        System.out.println("Code: " + sCode + ", Number: " + sNum);
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        // Create and start db1 thread
+        StoreData db1 = new StoreData("195.162.80.87", 3034);
+        db1.start();
+        
+        // Create and start db2 thread
+        StoreData db2 = new StoreData("194.23.56.25", 8080);
+        db2.start();
+    }
+}

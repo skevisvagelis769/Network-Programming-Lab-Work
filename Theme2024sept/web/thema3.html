@@ -1,0 +1,26 @@
+public class Main {
+    public static void main(String[] args) {
+        // Create and start db1 thread
+        StoreData db1 = new StoreData("195.162.80.87", 3034);
+        db1.start();
+        
+        // Create and start db2 thread
+        StoreData db2 = new StoreData("194.23.56.25", 8080);
+        db2.start();
+        
+        try {
+             // Wait for db2 to finish, with 9 second timeout
+             db2.join(9000);
+
+             // After 9 seconds (or db2 finishing), check if it's still alive
+             if (db2.isAlive()) {
+                 System.out.println("9 seconds passed, db2 still running");
+             } else {
+                 System.out.println("db2 finished before 9 seconds");
+             }
+
+         } catch (InterruptedException e) {
+             System.out.println("Thread interrupted: " + e.getMessage());
+         }
+    }
+}
